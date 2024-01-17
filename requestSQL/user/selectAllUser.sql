@@ -1,0 +1,12 @@
+Select 
+    id,
+    lastname,
+    firstname,
+    mail,
+    password,
+    birthdate,
+    phone,
+    address,
+    postalcode
+from 
+    users
