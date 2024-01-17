@@ -11,9 +11,9 @@ app.use(morgan('tiny'));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Behold The MEVN Stack!'
+app.get('/api', (req, res) => {
+    res.status(200).send({
+        message: "Bienvenue sur l\'API de répiHandi"
     });
 });
 
