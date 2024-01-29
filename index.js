@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-    res.json({
+    res.status(200).send({
         message: "Bienvenue sur l'API de répiHandi!"
-    });
+    })
 });
 
 //Select every users in the db
