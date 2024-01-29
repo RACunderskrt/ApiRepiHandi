@@ -1,4 +1,5 @@
-const { pool } = require('./db.js')
+//const { pool } = require('./db.js')
+const { pool } = require('./dbLocal.js')
 const fs = require("fs");
 
 class request{

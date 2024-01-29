@@ -11,7 +11,8 @@ SET
     birthdate = @@birthdate@@,
     phone = @@phone@@,
     address = @@address@@,
-    postalcode = @@postalcode@@
+    postalcode = @@postalcode@@,
+    id_role = @@id_role@@
 
 WHERE id = @@id@@;
 

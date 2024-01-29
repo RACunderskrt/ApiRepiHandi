@@ -7,7 +7,8 @@ SELECT
     birthdate,
     phone,
     address,
-    postalcode
+    postalcode,
+    id_role
 FROM 
     users
 WHERE 

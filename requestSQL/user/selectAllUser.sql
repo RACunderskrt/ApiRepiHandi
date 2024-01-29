@@ -7,6 +7,8 @@ Select
     birthdate,
     phone,
     address,
-    postalcode
+    postalcode,
+    id_role
 from 
     users
+ORDER BY id
