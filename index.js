@@ -49,7 +49,6 @@ app.post('/user/check', (req, res) => {
     userDAO.selectUser(req.body.mail).then((request) => {
         newObj = request.rows[0]
         if(newObj !== undefined && newObj.password === req.body.password){
-            delete newObj.password
             res.status(200).send({connect: true, object : newObj})
         }
         else
