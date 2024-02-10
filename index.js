@@ -25,9 +25,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-    res.json({
+    res.status(200).send({
         message: "Bienvenue sur l'API de répiHandi!"
-    });
+    })
 });
 
 //Select every users in the db
@@ -49,7 +49,6 @@ app.post('/user/check', (req, res) => {
     userDAO.selectUser(req.body.mail).then((request) => {
         newObj = request.rows[0]
         if(newObj !== undefined && newObj.password === req.body.password){
-            delete newObj.password
             res.status(200).send({connect: true, object : newObj})
         }
         else
