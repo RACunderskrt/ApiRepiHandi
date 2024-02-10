@@ -9,6 +9,7 @@ Select
     talk,
     blind,
     epilepsy,
-    deaf
+    deaf,
+    id_user
 from 
     pac

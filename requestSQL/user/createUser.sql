@@ -8,7 +8,7 @@ SET
     firstname = @@firstname@@,
     mail = @@mail@@,
     password = @@password@@,
-    birthdate = @@birthdate@@,
+    birthdate = DATE @@birthdate@@ + INTEGER '1',
     phone = @@phone@@,
     address = @@address@@,
     postalcode = @@postalcode@@,
@@ -32,7 +32,7 @@ VALUES (
     @@firstname@@,
     @@mail@@,
     @@password@@,
-    @@birthdate@@,
+    DATE @@birthdate@@ + INTEGER '1',
     @@phone@@,
     @@address@@,
     @@postalcode@@);

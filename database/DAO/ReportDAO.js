@@ -15,6 +15,13 @@ class ReportDAO{
         return this.launch(req)
     }
 
+    async selectReport(id){
+        let req = fs.readFileSync("./requestSQL/report/selectReport.sql", 'utf8');
+        req = req.replace('@@param1@@', id)
+        console.log(req)
+        return this.launch(req)
+    }
+
     async createReport(obj){
         let req = fs.readFileSync("./requestSQL/report/createReport.sql", 'utf8');
         req = this.replaceParamByValue(req, obj)

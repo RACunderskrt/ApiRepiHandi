@@ -42,6 +42,6 @@ VALUES (
     @@blind@@,
     @@epilepsy@@,
     @@deaf@@,
-    @@iduser@@);
+    @@id_user@@);
 END IF;
 END $$;

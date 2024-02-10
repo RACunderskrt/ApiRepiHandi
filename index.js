@@ -24,6 +24,12 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/api', (req, res) => {
+    res.json({
+        message: "Bienvenue sur l'API de répiHandi!"
+    });
+});
+
 //Select every users in the db
 app.get('/user', (req, res) => {
     userDAO.selectAllUser().then((request) => {

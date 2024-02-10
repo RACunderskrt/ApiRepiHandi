@@ -1,2 +1,2 @@
-DELETE FROM User
+DELETE FROM users
 WHERE id = @@param1@@

@@ -9,7 +9,8 @@ SELECT
     talk,
     blind,
     epilepsy,
-    deaf
+    deaf,
+    id_user
 FROM 
     pac
 WHERE 

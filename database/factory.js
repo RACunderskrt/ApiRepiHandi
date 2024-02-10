@@ -1,4 +1,4 @@
-const { pool } = require('./dbLocal.js')
+const { pool } = require('./db.js')
 const UserDAO = require('./DAO/UserDAO.js')
 const PacDAO = require('./DAO/PacDAO.js')
 const ActivitiesDAO = require('./DAO/ActivitiesDAO.js')
@@ -6,28 +6,28 @@ const MapDAO = require('./DAO/MapDAO.js')
 const ReportDAO = require('./DAO/ReportDAO.js')
 
 class Factory{
-    constructor(){
-        this.pool = pool;
+    constructor(pool_ = pool){
+        this.pool = pool_;
     }
 
     createUserDAO(){
-        return new UserDAO(this.pool)
+        return new UserDAO(this.pool);
     }
 
     createPacDAO(){
-        return new PacDAO(this.pool)
+        return new PacDAO(this.pool);
     }
 
     createActivitiesDAO(){
-        return new ActivitiesDAO(this.pool)
+        return new ActivitiesDAO(this.pool);
     }
 
     createMapDAO(){
-        return new MapDAO(this.pool)
+        return new MapDAO(this.pool);
     }
 
     createReportDAO(){
-        return new ReportDAO(this.pool)
+        return new ReportDAO(this.pool);
     }
 }
 
