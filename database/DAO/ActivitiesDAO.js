@@ -61,26 +61,17 @@ class ActivitiesDAO{
             while(req.includes('@@'+property+'@@'))
                 if(isNaN(obj[property])){
                     if(obj[property].includes("'")){
-                        obj[property] = this.replaceQuote(obj[property])
+                        obj[property] = obj[property].replaceAll("'", "''")
                     }
                         
-                    req = req.replace('@@'+property+'@@', `'${obj[property]}'`)
+                    req = req.replaceAll('@@'+property+'@@', `'${obj[property]}'`)
                 }
                 else
-                    req = req.replace('@@'+property+'@@', obj[property])
+                    req = req.replaceAll('@@'+property+'@@', obj[property])
         }
         console.log("req :", req)
         return req
     }
-
-    //Replace every ' by \' to avoid any error in the db
-    replaceQuote(str){
-        let res = ""
-        for(let char of str)
-            char === "'" ? res+= "\'" : res+= char
-        return res
-    }
-
 }
 
 module.exports = ActivitiesDAO

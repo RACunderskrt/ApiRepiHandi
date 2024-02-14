@@ -44,11 +44,23 @@ app.get('/user/:mail', (req, res) => {
     });
 });
 
-//Check if the right password is given
+//Check if the right password is given and if the account is not banned
 app.post('/user/check', (req, res) => {
     userDAO.selectUser(req.body.mail).then((request) => {
         newObj = request.rows[0]
-        if(newObj !== undefined && newObj.password === req.body.password){
+        if(newObj !== undefined && newObj.password === req.body.password && newObj.id_role !== 3){
+            res.status(200).send({connect: true, object : newObj})
+        }
+        else
+            res.status(401).send({error: "Can't connect to an account", connect: false})
+    });
+});
+
+//Check if the right password is given and if the account is an admin
+app.post('/admin/check', (req, res) => {
+    userDAO.selectUser(req.body.mail).then((request) => {
+        newObj = request.rows[0]
+        if(newObj !== undefined && newObj.password === req.body.password && newObj.id_role === 1){
             res.status(200).send({connect: true, object : newObj})
         }
         else
