@@ -72,6 +72,7 @@ class ActivitiesDAO{
         console.log("req :", req)
         return req
     }
+    
 }
 
 module.exports = ActivitiesDAO
