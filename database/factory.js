@@ -1,4 +1,4 @@
-const { pool } = require('./dbLocal.js')
+const { pool } = require('./db.js')
 const UserDAO = require('./DAO/UserDAO.js')
 const PacDAO = require('./DAO/PacDAO.js')
 const ActivitiesDAO = require('./DAO/ActivitiesDAO.js')
