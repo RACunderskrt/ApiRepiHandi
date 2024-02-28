@@ -7,7 +7,8 @@ SELECT
     id_user,
     capacity,
     address,
-    postalcode
+    postalcode,
+    request
 FROM
     activities
 WHERE

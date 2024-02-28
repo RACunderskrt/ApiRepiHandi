@@ -14,7 +14,8 @@ test('Test insert, select, delete in Activities', async () => {
       id_user:2,
       capacity:2,
       address:"maison de répis",
-      postalcode:"13200"
+      postalcode:"13200",
+      request:true
     }
 
     //create the Activities in the database

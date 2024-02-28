@@ -11,7 +11,8 @@ SET
     id_user = @@id_user@@, 
     capacity = @@capacity@@, 
     address = @@address@@, 
-    postalcode = @@postalcode@@
+    postalcode = @@postalcode@@,
+    request = @@request@@
 
 WHERE id = @@id@@;
 
@@ -25,7 +26,8 @@ INSERT INTO  activities(
     id_user,
     capacity,
     address,
-    postalcode
+    postalcode,
+    request
 ) 
 VALUES (
     @@name@@,
@@ -35,6 +37,7 @@ VALUES (
     @@id_user@@,
     @@capacity@@,
     @@address@@,
-    @@postalcode@@);
+    @@postalcode@@,
+    @@request@@);
 END IF;
 END $$;
