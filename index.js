@@ -44,7 +44,7 @@ app.get('/user/:mail', (req, res) => {
     });
 });
 
-//Check if the right password is given and if the account is not banned
+//Check if the right password is given
 app.post('/user/check', (req, res) => {
     userDAO.selectUser(req.body.mail).then((request) => {
         newObj = request.rows[0]
@@ -120,6 +120,13 @@ app.delete('/pac/:id', (req, res) => {
 //Select every activities in the db
 app.get('/activities', (req, res) => {
     actDAO.selectAllActivities().then((request) => {
+        res.send(request.rows);
+    });
+});
+
+//Select the max id of activities in the db
+app.get('/activities/max', (req, res) => {
+    actDAO.selectMaxID().then((request) => {
         res.send(request.rows);
     });
 });

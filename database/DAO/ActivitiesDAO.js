@@ -22,6 +22,12 @@ class ActivitiesDAO{
         return this.launch(req)
     }
 
+    async selectMaxID(){
+        let req = fs.readFileSync("./requestSQL/activities/selectMaxID.sql", 'utf8');
+        console.log(req)
+        return this.launch(req)
+    }
+
     async selectActivitiesbyDay(obj){
         let req = fs.readFileSync("./requestSQL/activities/selectActivitiesbyDay.sql", 'utf8');
         let date = new Date(obj.date)
@@ -72,7 +78,6 @@ class ActivitiesDAO{
         console.log("req :", req)
         return req
     }
-    
 }
 
 module.exports = ActivitiesDAO
